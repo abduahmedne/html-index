@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>javascript learnig</title>
+    <style>
+        body{
+            font-family: system-ui;
+            margin: 0%;
+            padding: 0%;
+        }
+        #container{
+            background-color: rgb(30, 209, 233);
+            padding: 0%;
+            width: 450px; 
+            height: 300px;
+            border-radius: 5px;
+            text-align:center;
+            
+            margin:0 auto ;
+        }
+        input[type="number"], input[type="number"] {
+            height: 30px;
+            margin-bottom: 20px;
+            border-radius: 5px;
+            border: 1px solid;
+            background-color: whitesmoke;
+            
+
+
+        }
+        button {
+            border: 1px solid;
+            border-radius: 5px;
+            width: 80px;
+            height: 30px;
+            margin: 0 auto;
+            margin-left:40px;
+            background-color:#fff;
+        }
+        
+    
+        
+
+        
+    </style>
+    
+
+</head>
+
+<body>
+    
+    <div id="container">
+        <h2 >BMI CALCULATOR</h2>
+    
+        <label for="weight">weight:</label>
+        <input id="weight" type="number" placeholder=" weight(kg)">
+    <div>  
+        <label for="height">height:</label>
+        <input id="height" type="number" placeholder=" height(m)">
+    </div>
+    <button id="btn">submit</button>
+    
+    <div  >
+        <H4 id="result"></H4>
+        <H3 id="result-category"></H3>
+        
+    </div>
+</div>
+
+
+</body>
+<script>
+    document.getElementById("btn").addEventListener("click", function(){
+        
+        
+        var title = document.getElementById("weight").value;
+        var tit = document.getElementById("height").value;
+        var result = title/(tit*tit)
+        document.getElementById("result").innerHTML = result
+        
+        if (result<18){
+            document.getElementById("result-category").innerHTML ="skinny"
+        
+        }
+        else if (result >18 && result <25){
+            document.getElementById("result-category").innerHTML ="perfect weight"
+
+        }
+        else if(result >25 && result <30){
+            document.getElementById("result-category").innerHTML ="fat"
+
+        }
+        else if(result >30 && result <35){
+        document.getElementById("result-category").innerHTML ="fat stage number one"
+        }
+        else if(result >35 && result <40){
+            document.getElementById("result-category").innerHTML ="fat stage number two"
+
+        }
+        else {
+            document.getElementById("result-category").innerHTML ="very dangerous stage number"
+        }
+        
+    })
+</script>
+
+</html>
